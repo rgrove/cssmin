@@ -33,7 +33,7 @@
 # script.
 #
 # Author::    Ryan Grove (mailto:ryan@wonko.com)
-# Version::   1.0.0 (?)
+# Version::   1.0.0 (2008-03-22)
 # Copyright:: Copyright (c) 2008 Ryan Grove. All rights reserved.
 # License::   New BSD License (http://opensource.org/licenses/bsd-license.php)
 # Website::   http://github.com/rgrove/cssmin/
