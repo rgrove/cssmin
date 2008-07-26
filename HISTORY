@@ -1,5 +1,8 @@
 CSSMin History
 ================================================================================
 
+Version 1.0.1 (2008-07-25)
+  * Fixed a rare bug that could result in redundant semicolons.
+
 Version 1.0.0 (2008-03-22)
   * First release.
