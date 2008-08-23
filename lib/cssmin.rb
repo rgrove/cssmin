@@ -33,7 +33,7 @@
 # script.
 #
 # Author::    Ryan Grove (mailto:ryan@wonko.com)
-# Version::   1.0.1 (2008-07-25)
+# Version::   1.0.2 (2008-08-23)
 # Copyright:: Copyright (c) 2008 Ryan Grove. All rights reserved.
 # License::   New BSD License (http://opensource.org/licenses/bsd-license.php)
 # Website::   http://github.com/rgrove/cssmin/
@@ -93,7 +93,7 @@ module CSSMin
 
     # Compress color hex values, making sure not to touch values used in IE
     # filters, since they would break.
-    css.gsub!(/([^"'=\s])\s*#([0-9a-f])\2([0-9a-f])\3([0-9a-f])\4/i, '\1#\2\3\4')
+    css.gsub!(/([^"'=\s])(\s?)\s*#([0-9a-f])\3([0-9a-f])\4([0-9a-f])\5/i, '\1\2#\3\4\5')
 
     # Remove empty rules.
     css.gsub!(/[^\}]+\{;\}\n/, '')

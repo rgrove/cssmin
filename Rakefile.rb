@@ -34,7 +34,7 @@ thoth_gemspec = Gem::Specification.new do |s|
   s.rubyforge_project = 'riposte'
 
   s.name     = 'cssmin'
-  s.version  = '1.0.1'
+  s.version  = '1.0.2'
   s.author   = 'Ryan Grove'
   s.email    = 'ryan@wonko.com'
   s.homepage = 'http://github.com/rgrove/cssmin/'
