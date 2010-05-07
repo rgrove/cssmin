@@ -50,7 +50,7 @@ module CSSMin
   # Reads CSS from +input+ (which can be a String or an IO object) and
   # returns a String containing minified CSS.
   def self.minify(input)
-    css = input.is_a?(IO) ? input.read : input.to_s
+    css = input.is_a?(IO) ? input.read : input.dup.to_s
 
     # Remove comments.
     css.gsub!(/\/\*[\s\S]*?\*\//, '')
