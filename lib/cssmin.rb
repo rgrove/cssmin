@@ -102,7 +102,7 @@ module CSSMin
     css.gsub!('___BMH___', '"\"}\""')
 
     # Prevent redundant semicolons.
-    css.gsub!(/;;+/, ';')
+    css.gsub!(/;+\}/, '}')
 
     css.strip
   end
