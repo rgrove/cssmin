@@ -2,39 +2,23 @@ require 'rubygems'
 require 'cssmin'
 
 gem 'minitest'
-require 'minitest/spec'
 require 'minitest/autorun'
 
 describe CSSMin do
   subject { CSSMin.minify(css) }
 
   describe 'stripping comments and whitespace that are not required' do
-    let(:css) do
-      <<CSS
-/*****
-  Multi-line comment
-  before a new class name
-*****/
-.classname {
-    /* comment in declaration block */
-    font-weight: normal;
-}
-CSS
-    end
+    let(:css) { IO.read('test/fixtures/comments.css') }
+    let(:expected_minified_css) { IO.read('test/fixtures/comments.css.min').strip }
 
-    it { subject.must_equal ".classname{font-weight:normal}" }
+    it { subject.must_equal expected_minified_css }
   end
 
   describe 'preserving media queries significant whitespace' do
-    let(:css) do
-      <<CSS
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  some-css : here
-}
-CSS
-    end
+    let(:css) { IO.read('test/fixtures/media_queries.css') }
+    let(:expected_minified_css) { IO.read('test/fixtures/media_queries.css.min').strip }
 
-    it { subject.must_equal "@media screen and (-webkit-min-device-pixel-ratio:0){some-css:here}" }
+    it { subject.must_equal expected_minified_css }
   end
 
 end
