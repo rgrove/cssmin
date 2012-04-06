@@ -101,8 +101,11 @@ module CSSMin
     # Re-insert box model hacks.
     css.gsub!('___BMH___', '"\"}\""')
 
+    # Put the space back in for media queries
+    css.gsub!(/\band\(/, 'and (')
+
     # Prevent redundant semicolons.
-    css.gsub!(/;;+/, ';')
+    css.gsub!(/;+\}/, '}')
 
     css.strip
   end
