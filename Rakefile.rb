@@ -32,18 +32,16 @@ require 'rdoc/task'
 require 'rake/testtask'
 
 gemspec = Gem::Specification.new do |s|
-  s.rubyforge_project = 'riposte'
-
   s.name     = 'cssmin'
-  s.version  = '1.0.2'
+  s.version  = '1.0.3'
   s.author   = 'Ryan Grove'
   s.email    = 'ryan@wonko.com'
-  s.homepage = 'http://github.com/rgrove/cssmin/'
+  s.homepage = 'https://github.com/rgrove/cssmin/'
   s.platform = Gem::Platform::RUBY
   s.summary  = 'Ruby library for minifying CSS.'
   s.description  = 'Ruby library for minifying CSS. Inspired by cssmin.js and YUI Compressor.'
 
-  s.files        = FileList['{lib}/**/*', 'HISTORY', 'LICENSE'].to_a
+  s.files        = FileList['{lib}/**/*', 'HISTORY.md', 'LICENSE'].to_a
   s.require_path = 'lib'
   s.has_rdoc     = true
 
